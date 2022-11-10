@@ -1,0 +1,26 @@
+.weather {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    max-width: 1000px;
+    height: 800px;
+    overflow-x: scroll;
+    position: relative;
+    z-index: 10;
+    background: whitesmoke;
+    opacity: 50%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
+@media screen and (min-width: 1100px){
+    .weather {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

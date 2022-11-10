@@ -1,0 +1,15 @@
+
+.heading {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "American Typewriter", sans-serif;
+    color: #ffb07a;
+    mix-blend-mode: color-dodge;
+}
+
+@media screen and (min-width: 1100px){
+    .heading {
+        font-size: 34px;
+    }
+}
