@@ -195,28 +195,41 @@ import React from 'react'
 
 // Algorithms
 
-const sort = (...arr) => {
-    return arr.sort((a,b) => {
-        return a-b
-    })
-}
-
-const binarySearch = (arr, key) =>{
-    let left = -1
-    let right = arr.length
-    while (left < right - 1){
-        let mid = (left + right) / 2
-        if (arr[mid] < key){
-            left = mid
-        } else {
-            right = mid
-        }
-    }
-    return right
-}
-
-console.log(sort(12,2,4,4,4,1,2,3,3,15,6,7,8,9,0),)
-console.log(binarySearch(sort(12,2,4,4,4,1,2,3,3,15,6,7,8,9,0), 4))
+// const sort = (...arr) => {
+//     return arr.sort((a,b) => {
+//         return a-b
+//     })
+// }
+//
+// const binarySearch = (arr, key) =>{
+//     let left = -1
+//     let right = arr.length
+//     while (left < right - 1){
+//         let mid = (left + right) / 2
+//         if (arr[mid] < key){
+//             left = mid
+//         } else {
+//             right = mid
+//         }
+//     }
+//     return right
+// }
+//
+// console.log(sort(12,2,4,4,4,1,2,3,3,15,6,7,8,9,0),)
+// console.log(binarySearch(sort(12,2,4,4,4,1,2,3,3,15,6,7,8,9,0), 4))
+// const twoNumbers = (sum, ...args) => {
+//     let result = []
+//     for (let first of args){
+//         for (let second of args){
+//             if (args[first] + args[second] === sum){
+//                 result = [args[first], args[second]]
+//             }
+//         }
+//     }
+//     return result
+// }
+//
+// console.log(twoNumbers(14, 1,12,2,5,7,9,5,10))
 
 
 //Promises, async JS
@@ -224,6 +237,49 @@ console.log(binarySearch(sort(12,2,4,4,4,1,2,3,3,15,6,7,8,9,0), 4))
 export const Task = () => {
 
 
+    let studentA = {
+        name: 'Andrei',
+        age: 20,
+        groupId: 1,
+    }
+    let studentB = {
+        name: 'Vasya',
+        age: 15,
+        groupId: 2,
+    }
+    let studentC = {
+        name: 'Victor',
+        age: 24,
+        groupId: 1,
+    }
+    let studentD = {
+        name: 'Lena',
+        age: 24,
+        groupId: 2,
+    }
+
+
+    let students = []
+    students.push(studentA, studentB, studentC, studentD)
+    console.log(students)
+
+    const formattedStudents = (arr) =>{
+        let obj = {}
+        for (let item of arr){
+            if (item.age > 17){
+                let key = item.groupId
+                if (obj.hasOwnProperty(key)){
+                    obj[key].push(item)
+                } else {
+                    obj[key] = []
+                    obj[key].push(item)
+                }
+            }
+        }
+        return obj
+    }
+
+    console.log(formattedStudents(students))
     return <div>
 
     </div>
